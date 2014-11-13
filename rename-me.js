@@ -13,7 +13,7 @@ var
 	enemies = ["cow", "goblin", "dragon"]
 	gold = 0
 	weaponenchant = 0
-	
+	int = 10
 
 //prompt
 var heroname = prompt("What is your name, hero?", "")
@@ -22,7 +22,7 @@ var heroname = prompt("What is your name, hero?", "")
 
 //Output
 
-if (heroclass === "wizard"){
+if (heroclass == "wizard"){
 	console.log(heroname+ ", we need you to use your magic to help protect our village!")
 }
 else{
@@ -67,10 +67,12 @@ var buywenchant = confirm("Do you want to purchase a weapon enchantment?")
 	}
 
 
-//Traveling (function)
+//Traveling (string function)
 var travel = function(direction){
 	console.log("You traveled "+direction)
-	return direction
+	return "You traveled "+direction;
+	
+	
 }
 		
 confirm("It's time to go on an adventure now!")
@@ -80,12 +82,54 @@ travel(direction)
 //boolean function
 
 var fight = function(ready){
-	if (ready === true){
-		console.log("You begin to look for a fight!")
+	if (ready == true){
+		console.log("It is "+ready+" you want to look for a fight!")
+		return "It is "+ready+" you want to look for a fight!";
+		
 	}
 	else{
-		console.log("You prepare your strategy for a few minutes and then set out to look for a battle!")
+		console.log("It is "+ready+" you want to look for a fight so you prepare your strategy for a few minutes and then set out to look for a battle!")
+		return "It is "+ready+" you want to look for a fight so you prepare your strategy for a few minutes and then set out to look for a battle!";
+		
 	}
 }
 var ready = confirm(" are you ready to look for a fight?")
 fight(ready)
+
+//array usage
+var	enemies = ["cow", "goblin", "dragon"]
+console.log("There are " + enemies.length +" different enemies")
+
+
+var enemychoice = prompt("To determine what you will fight, pick a number between 0 - 2")
+	if (enemychoice = 0){
+		console.log("You will fight "+enemies[0])
+	}
+	else if(enemychoice = 1){
+		console.log("You will fight "+enemies[1])
+	}
+	else{
+		console.log("You will fight "+enemies[2])
+	}
+	
+
+//number function
+var damage = function(totaldamage){
+	if (totaldamage <= 20){
+		console.log("You only deal a total of "+totaldamage+" damage!")
+		return "You only deal "+totaldamage+" damage!";
+		
+	}
+	else{
+		console.log("You deal a whopping total of "+totaldamage+" damage!")
+		return "You deal a whopping "+totaldamage+" damage!";
+		
+	}
+}
+var totaldamage = (int * 2 + weaponenchant * 5)
+damage(totaldamage)
+
+	
+	
+	
+	
