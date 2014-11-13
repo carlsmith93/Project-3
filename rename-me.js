@@ -11,14 +11,8 @@ var
 	goblinhp = 300
 	dragonhp = 600
 	enemies = ["cow", "goblin", "dragon"]
-	statpoints = 10
-	statpoints2 = 0
-	statpoints3 = 0
-	weaponenchant = 0
 	gold = 0
-	level = [1,2,3]
-	exp = [1000, 2000, 10000]
-	
+	weaponenchant = 0
 	
 
 //prompt
@@ -72,5 +66,26 @@ var buywenchant = confirm("Do you want to purchase a weapon enchantment?")
 		console.log("You do not purchase a weapon enchantment!")
 	}
 
+
+//Traveling (function)
+var travel = function(direction){
+	console.log("You traveled "+direction)
+	return direction
+}
 		
-	
+confirm("It's time to go on an adventure now!")
+var direction = prompt("What direction would you like to go?")
+travel(direction)
+
+//boolean function
+
+var fight = function(ready){
+	if (ready === true){
+		console.log("You begin to look for a fight!")
+	}
+	else{
+		console.log("You prepare your strategy for a few minutes and then set out to look for a battle!")
+	}
+}
+var ready = confirm(" are you ready to look for a fight?")
+fight(ready)
