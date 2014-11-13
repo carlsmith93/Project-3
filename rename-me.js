@@ -6,10 +6,7 @@ Create flowchart and program
 
 //Global Variables
 
-var	
-	cowhp = 100
-	goblinhp = 300
-	dragonhp = 600
+var	playerhp = 100
 	enemies = ["cow", "goblin", "dragon"]
 	gold = 0
 	weaponenchant = 0
@@ -61,6 +58,16 @@ var buywenchant = confirm("Do you want to purchase a weapon enchantment?")
 	if(buywenchant = true){
 		gold -= 100
 		weaponenchant+=1
+			if(gold >= 100){
+				gold-=100
+				weaponenchant+=1
+				console.log("You also buy a second weapon enchantment!")
+			}
+			else{
+				console.log("You cant afford anything else!  Get out of my store!")
+			}
+				
+					
 	}
 	else{
 		console.log("You do not purchase a weapon enchantment!")
@@ -101,27 +108,28 @@ var	enemies = ["cow", "goblin", "dragon"]
 console.log("There are " + enemies.length +" different enemies")
 
 
-var enemychoice = prompt("To determine what you will fight, pick a number between 0 - 2")
-	if (enemychoice = 0){
-		console.log("You will fight "+enemies[0])
-	}
-	else if(enemychoice = 1){
-		console.log("You will fight "+enemies[1])
-	}
-	else{
-		console.log("You will fight "+enemies[2])
-	}
+var enemychoice = prompt("To determine what you will fight, pick a number between 0 - 2", "")
+parseInt(enemychoice)
+if (enemychoice == 0){
+	console.log("You will fight a "+enemies[0])
+}
+else if(enemychoice == 1){
+	console.log("You will fight a "+enemies[1])
+}
+else{
+	console.log("You will fight a "+enemies[2])
+}
 	
 
 //number function
 var damage = function(totaldamage){
 	if (totaldamage <= 20){
-		console.log("You only deal a total of "+totaldamage+" damage!")
+		console.log("You only deal up to a total of "+totaldamage+" damage!")
 		return "You only deal "+totaldamage+" damage!";
 		
 	}
 	else{
-		console.log("You deal a whopping total of "+totaldamage+" damage!")
+		console.log("You can deal up to a whopping total of "+totaldamage+" damage!")
 		return "You deal a whopping "+totaldamage+" damage!";
 		
 	}
@@ -129,7 +137,28 @@ var damage = function(totaldamage){
 var totaldamage = (int * 2 + weaponenchant * 5)
 damage(totaldamage)
 
+//battle
+
+if(enemychoice == 0){
+	for(cowhp = 100; cowhp > 0; cowhp-=totaldamage){
+		console.log("The cow has taken "+totaldamage)
 	
-	
-	
-	
+	}
+console.log("The cow is dead!")
+}
+else if(enemychoice ==1){
+	for(goblinhp = 200; goblinhp > 0; goblinhp-=totaldamage){
+	    for(attackprep = 5; attackprep = 0;attackprep--){
+		console.log(attackprep +" seconds prep time remaining before attack!")
+			}
+		console.log("The goblin has taken "+totaldamage)
+	}
+
+console.log("The goblin is dead!")
+}
+else{
+	for(dragonhp = 600; dragonhp > 0; dragonhp-=totaldamage){
+	console.log("The dragon has taken "+totaldamage)
+	}
+console.log("The dragon is dead!")
+}
