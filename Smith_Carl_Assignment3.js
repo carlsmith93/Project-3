@@ -58,7 +58,7 @@ var buywenchant = confirm("Do you want to purchase a weapon enchantment?")
 	if(buywenchant = true){
 		gold -= 100
 		weaponenchant+=1
-			if(gold >= 100){
+			if(gold >= 900){
 				gold-=100
 				weaponenchant+=1
 				console.log("You also buy a second weapon enchantment!")
@@ -141,24 +141,42 @@ damage(totaldamage)
 
 if(enemychoice == 0){
 	for(cowhp = 100; cowhp > 0; cowhp-=totaldamage){
-		console.log("The cow has taken "+totaldamage)
-	
+		for(attackprep = 5; attackprep = 0;attackprep--){
+		}
+	console.log("The cow has taken "+totaldamage)
+	console.log("The cow has "+cowhp+" hp left")
 	}
 console.log("The cow is dead!")
 }
 else if(enemychoice ==1){
 	for(goblinhp = 200; goblinhp > 0; goblinhp-=totaldamage){
 	    for(attackprep = 5; attackprep = 0;attackprep--){
-		console.log(attackprep +" seconds prep time remaining before attack!")
-			}
+			
+		}
 		console.log("The goblin has taken "+totaldamage)
+		console.log("The goblin has "+goblinhp+" hp left")
+		
 	}
 
 console.log("The goblin is dead!")
 }
 else{
 	for(dragonhp = 600; dragonhp > 0; dragonhp-=totaldamage){
-	console.log("The dragon has taken "+totaldamage)
+		for(attackprep = 5; attackprep = 0;attackprep--){
+		}
+		console.log("The dragon has taken "+totaldamage)
+		console.log("The dragon has "+dragonhp+" hp left")
+		
 	}
 console.log("The dragon is dead!")
 }
+
+//returned values
+console.log("The returned values are:")
+console.log(travel(direction))
+console.log(fight(ready))
+console.log(damage(totaldamage))
+
+//ending output
+
+confirm("The great journey is now over, and you leave victoriously!")
